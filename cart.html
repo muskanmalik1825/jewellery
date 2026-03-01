@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Review your shopping cart at Lumière. Adjust quantities, apply coupons, and proceed to checkout.">
+    <title>Shopping Cart | Lumière Luxury Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+
+    <div class="announcement-bar">Free shipping on orders above ₹999 · Use code <span>SHINE20</span> for 20% off</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">LUMI<span>È</span>RE</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a><a href="category.html">Shop</a>
+                    <a href="category.html?cat=rings">Rings</a><a href="category.html?cat=necklaces">Necklaces</a>
+                    <a href="category.html?cat=earrings">Earrings</a><a href="category.html?cat=bracelets">Bracelets</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="nav-icon" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg></button>
+                <button class="nav-icon account-trigger" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg></button>
+                <button class="nav-icon" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg><span class="cart-count" id="navCartCount">3</span></a>
+                <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+        <a href="index.html">Home</a><a href="category.html">Shop All</a>
+        <a href="category.html?cat=rings">Rings</a><a href="category.html?cat=necklaces">Necklaces</a>
+        <a href="category.html?cat=earrings">Earrings</a><a href="category.html?cat=bracelets">Bracelets</a>
+    </div>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-layout" id="cartLayout">
+                <!-- Cart Items -->
+                <div class="cart-main" id="cartMain">
+                    <div class="cart-header">
+                        <h1>Shopping Cart</h1>
+                        <span id="cartItemCount">3 Items</span>
+                    </div>
+                    <div class="cart-items" id="cartItems">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="cart-summary" id="cartSummary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">₹12,497</span></div>
+                    <div class="summary-row"><span>Discount</span><span class="savings" id="summaryDiscount">−
+                            ₹5,500</span></div>
+                    <div class="summary-row"><span>Shipping</span><span class="free" id="summaryShipping">FREE</span>
+                    </div>
+                    <div class="coupon-wrap">
+                        <div class="coupon-input-wrap">
+                            <input type="text" id="couponInput" placeholder="Coupon code">
+                            <button id="couponApplyBtn">Apply</button>
+                        </div>
+                        <div class="coupon-applied" id="couponApplied" style="display:none;">
+                            <span>🎉 SHINE20 applied — ₹1,000 off</span>
+                            <button id="couponRemoveBtn">Remove</button>
+                        </div>
+                    </div>
+                    <div class="summary-row total"><span>Total</span><span id="summaryTotal">₹12,497</span></div>
+                    <a href="checkout.html" class="summary-cta" id="checkoutBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Secure Checkout
+                    </a>
+                    <a href="category.html" class="summary-continue">← Continue Shopping</a>
+                    <div class="summary-trust">
+                        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>Secure</span>
+                        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <rect x="1" y="3" width="15" height="13" />
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                <circle cx="5.5" cy="18.5" r="2.5" />
+                                <circle cx="18.5" cy="18.5" r="2.5" />
+                            </svg>Free Ship</span>
+                        <span class="trust-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUMI<span>È</span>RE</a>
+                    <p>Crafting moments of brilliance since 2018.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4><a href="category.html?cat=rings">Rings</a><a
+                        href="category.html?cat=necklaces">Necklaces</a><a
+                        href="category.html?cat=earrings">Earrings</a>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4><a href="#">Our Story</a><a href="#">Craftsmanship</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4><a href="#">Contact Us</a><a href="#">Shipping & Returns</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Lumière. All rights reserved.</p>
+                <p>Privacy Policy · Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Account Modal (injected by JS) -->
+    <div id="accountModalRoot"></div>
+    <div id="toastRoot"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

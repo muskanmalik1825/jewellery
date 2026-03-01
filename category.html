@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse Lumière's curated jewelry collections. Filter by category, price, metal, and more to find your perfect piece.">
+    <title>Shop Jewelry | Lumière — Rings, Necklaces, Earrings & Bracelets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Free shipping on orders above ₹999 · Use code <span>SHINE20</span> for 20% off
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">LUMI<span>È</span>RE</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="category.html">Shop</a>
+                    <a href="category.html?cat=rings">Rings</a>
+                    <a href="category.html?cat=necklaces">Necklaces</a>
+                    <a href="category.html?cat=earrings">Earrings</a>
+                    <a href="category.html?cat=bracelets">Bracelets</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="nav-icon" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg></button>
+                <button class="nav-icon account-trigger" aria-label="Account"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg></button>
+                <button class="nav-icon" aria-label="Wishlist"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg><span class="cart-count" id="navCartCount">3</span></a>
+                <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+        <a href="index.html">Home</a><a href="category.html">Shop All</a>
+        <a href="category.html?cat=rings">Rings</a><a href="category.html?cat=necklaces">Necklaces</a>
+        <a href="category.html?cat=earrings">Earrings</a><a href="category.html?cat=bracelets">Bracelets</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a><span class="sep">/</span><span>Shop</span>
+            </div>
+            <h1>Our Collections</h1>
+            <p>Discover timeless pieces crafted with passion and precision</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="container">
+        <div class="shop-toolbar">
+            <div class="toolbar-left">Showing <strong id="productCount">8</strong> products</div>
+            <div class="toolbar-right">
+                <button class="mobile-filter-btn" id="mobileFilterBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="1.8">
+                        <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+                    </svg>
+                    Filters
+                </button>
+                <select class="sort-select" id="sortSelect">
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+                <div class="view-toggles">
+                    <button class="view-toggle active" title="Grid View"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg></button>
+                    <button class="view-toggle" title="List View"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <line x1="8" y1="6" x2="21" y2="6" />
+                            <line x1="8" y1="12" x2="21" y2="12" />
+                            <line x1="8" y1="18" x2="21" y2="18" />
+                            <line x1="3" y1="6" x2="3.01" y2="6" />
+                            <line x1="3" y1="12" x2="3.01" y2="12" />
+                            <line x1="3" y1="18" x2="3.01" y2="18" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-layout">
+            <!-- Sidebar -->
+            <aside class="shop-sidebar">
+                <div class="filter-group" data-filter="category">
+                    <div class="filter-group-header">
+                        <h3>Category</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="filter-options">
+                        <label class="filter-option" data-value="rings"><span class="filter-checkbox"></span>Rings<span
+                                class="count">142</span></label>
+                        <label class="filter-option" data-value="necklaces"><span
+                                class="filter-checkbox"></span>Necklaces<span class="count">98</span></label>
+                        <label class="filter-option" data-value="earrings"><span
+                                class="filter-checkbox"></span>Earrings<span class="count">215</span></label>
+                        <label class="filter-option" data-value="bracelets"><span
+                                class="filter-checkbox"></span>Bracelets<span class="count">76</span></label>
+                    </div>
+                </div>
+
+                <div class="filter-group" data-filter="price">
+                    <div class="filter-group-header">
+                        <h3>Price Range</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="filter-options">
+                        <div class="price-range-wrap">
+                            <div class="price-inputs">
+                                <input type="number" class="price-input" id="priceMin" placeholder="₹ Min" value="0">
+                                <span class="price-sep">—</span>
+                                <input type="number" class="price-input" id="priceMax" placeholder="₹ Max"
+                                    value="20000">
+                            </div>
+                            <input type="range" class="range-slider" min="0" max="20000" value="20000" id="priceRange">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group" data-filter="metal">
+                    <div class="filter-group-header">
+                        <h3>Metal</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="filter-options">
+                        <div class="color-options">
+                            <div class="color-swatch" data-metal="gold"
+                                style="background: linear-gradient(135deg, #C9A96E, #E8D5A8);" title="Gold"></div>
+                            <div class="color-swatch" data-metal="rose-gold"
+                                style="background: linear-gradient(135deg, #B76E79, #E8A0A0);" title="Rose Gold"></div>
+                            <div class="color-swatch" data-metal="silver"
+                                style="background: linear-gradient(135deg, #C0C0C0, #E8E8E8);" title="Silver"></div>
+                            <div class="color-swatch" data-metal="white-gold"
+                                style="background: linear-gradient(135deg, #E8E4DE, #FFFFFF);" title="White Gold"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group" data-filter="collection">
+                    <div class="filter-group-header">
+                        <h3>Collection</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                    <div class="filter-options">
+                        <label class="filter-option" data-value="signature"><span
+                                class="filter-checkbox"></span>Signature<span class="count">45</span></label>
+                        <label class="filter-option" data-value="classics"><span
+                                class="filter-checkbox"></span>Classics<span class="count">38</span></label>
+                        <label class="filter-option" data-value="bridal"><span
+                                class="filter-checkbox"></span>Bridal<span class="count">52</span></label>
+                        <label class="filter-option" data-value="everyday"><span
+                                class="filter-checkbox"></span>Everyday<span class="count">67</span></label>
+                        <label class="filter-option" data-value="luxe"><span class="filter-checkbox"></span>Luxe<span
+                                class="count">29</span></label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="shop-content">
+                <div class="products-grid" id="shopGrid">
+                    <!-- Injected by JS -->
+                </div>
+                <div class="pagination">
+                    <button class="page-btn disabled"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">LUMI<span>È</span>RE</a>
+                    <p>Crafting moments of brilliance since 2018. Every piece tells a story of elegance, artistry, and
+                        timeless beauty.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                            </svg></a>
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" />
+                                <path d="M9 22l2-8" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4><a href="category.html?cat=rings">Rings</a><a
+                        href="category.html?cat=necklaces">Necklaces</a><a
+                        href="category.html?cat=earrings">Earrings</a><a
+                        href="category.html?cat=bracelets">Bracelets</a>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4><a href="#">Our Story</a><a href="#">Craftsmanship</a><a href="#">Sustainability</a><a
+                        href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4><a href="#">Contact Us</a><a href="#">Size Guide</a><a href="#">Shipping &
+                        Returns</a><a href="#">FAQs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Lumière. All rights reserved.</p>
+                <p>Privacy Policy · Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="accountModalRoot"></div>
+    <div id="toastRoot"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
