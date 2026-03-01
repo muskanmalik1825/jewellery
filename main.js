@@ -1,13 +1,13 @@
 // ======================== PRODUCT DATA ========================
 const products = [
-  { id: 1, name: 'Celestial Diamond Pendant', brand: 'Lumière Signature', price: 4999, originalPrice: 6999, discount: 29, badge: 'bestseller', category: 'necklaces', rating: 4.8, reviews: 234, img: 'images/product-1.png', metal: 'gold', size: 'S' },
-  { id: 2, name: 'Aurora Hoop Earrings', brand: 'Lumière Classics', price: 2499, originalPrice: 3499, discount: 29, badge: 'new', category: 'earrings', rating: 4.9, reviews: 187, img: 'images/product-2.png', metal: 'gold', size: 'M' },
-  { id: 3, name: 'Ethereal Gold Bangle', brand: 'Lumière Luxe', price: 5999, originalPrice: null, discount: 0, badge: '', category: 'bracelets', rating: 4.7, reviews: 156, img: 'images/product-3.png', metal: 'gold', size: 'M' },
-  { id: 4, name: 'Solitaire Rosé Ring', brand: 'Lumière Bridal', price: 8999, originalPrice: 11999, discount: 25, badge: 'sale', category: 'rings', rating: 4.9, reviews: 312, img: 'images/product-4.png', metal: 'rose-gold', size: 'S' },
-  { id: 5, name: 'Charm Chain Anklet', brand: 'Lumière Everyday', price: 1499, originalPrice: 1999, discount: 25, badge: 'new', category: 'bracelets', rating: 4.6, reviews: 89, img: 'images/product-5.png', metal: 'gold', size: 'M' },
-  { id: 6, name: 'Layered Pearl Necklace', brand: 'Lumière Signature', price: 6499, originalPrice: null, discount: 0, badge: 'bestseller', category: 'necklaces', rating: 4.8, reviews: 201, img: 'images/product-1.png', metal: 'silver', size: 'L' },
-  { id: 7, name: 'Diamond Cluster Studs', brand: 'Lumière Luxe', price: 3999, originalPrice: 5499, discount: 27, badge: 'sale', category: 'earrings', rating: 4.7, reviews: 143, img: 'images/product-2.png', metal: 'white-gold', size: 'S' },
-  { id: 8, name: 'Tennis Diamond Bracelet', brand: 'Lumière Bridal', price: 12999, originalPrice: 15999, discount: 19, badge: 'bestseller', category: 'bracelets', rating: 5.0, reviews: 98, img: 'images/product-8.png', metal: 'white-gold', size: 'M' },
+  { id: 1, name: 'Celestial Diamond Pendant', brand: 'Lumière Signature', price: 4999, originalPrice: 6999, discount: 29, badge: 'bestseller', category: 'necklaces', rating: 4.8, reviews: 234, img: 'product-1.png', metal: 'gold', size: 'S' },
+  { id: 2, name: 'Aurora Hoop Earrings', brand: 'Lumière Classics', price: 2499, originalPrice: 3499, discount: 29, badge: 'new', category: 'earrings', rating: 4.9, reviews: 187, img: 'product-2.png', metal: 'gold', size: 'M' },
+  { id: 3, name: 'Ethereal Gold Bangle', brand: 'Lumière Luxe', price: 5999, originalPrice: null, discount: 0, badge: '', category: 'bracelets', rating: 4.7, reviews: 156, img: 'product-3.png', metal: 'gold', size: 'M' },
+  { id: 4, name: 'Solitaire Rosé Ring', brand: 'Lumière Bridal', price: 8999, originalPrice: 11999, discount: 25, badge: 'sale', category: 'rings', rating: 4.9, reviews: 312, img: 'product-4.png', metal: 'rose-gold', size: 'S' },
+  { id: 5, name: 'Charm Chain Anklet', brand: 'Lumière Everyday', price: 1499, originalPrice: 1999, discount: 25, badge: 'new', category: 'bracelets', rating: 4.6, reviews: 89, img: 'product-5.png', metal: 'gold', size: 'M' },
+  { id: 6, name: 'Layered Pearl Necklace', brand: 'Lumière Signature', price: 6499, originalPrice: null, discount: 0, badge: 'bestseller', category: 'necklaces', rating: 4.8, reviews: 201, img: 'product-1.png', metal: 'silver', size: 'L' },
+  { id: 7, name: 'Diamond Cluster Studs', brand: 'Lumière Luxe', price: 3999, originalPrice: 5499, discount: 27, badge: 'sale', category: 'earrings', rating: 4.7, reviews: 143, img: 'product-2.png', metal: 'white-gold', size: 'S' },
+  { id: 8, name: 'Tennis Diamond Bracelet', brand: 'Lumière Bridal', price: 12999, originalPrice: 15999, discount: 19, badge: 'bestseller', category: 'bracelets', rating: 5.0, reviews: 98, img: 'product-8.png', metal: 'white-gold', size: 'M' },
 ];
 
 // ======================== CART STATE ========================
